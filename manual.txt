@@ -1,0 +1,54 @@
+$ rm -rf .git
+
+$ git init
+->git저장소와 동기화할 내 로컬 폴더안에 .git 생성
+
+$ git remote add origin https://github.com/soojk129/test.git
+->웹git레퍼지토리 연결
+
+$ git branch -M main
+->최초생성시 master로 생성되므로 main으로 지정
+
+$ git pull origin main
+->웹git 저장소에 로컬과 다른게 있다면 pull받을것
+
+$ git status
+-> 아래에는 git추적당하지 않고있는 내 로컬 파일들 add해줄것들
+
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Appendix/
+        Chapter3/
+        Chapter4/
+        Chapter5/
+        Chapter6/
+        Chapter7/
+        Chapter8/
+        Chapter9/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+$ git add .
+->폴더안에 있는 것 전체 add
+
+$ git commit -m "test2"
+-> commit해주기
+
+$ git push
+->그냥 push하면 정확하게 원격저장소 이름을 언급해주지 않았다는 것이므로
+
+
+$ git remote -v
+-> remote -v 줘서 원격저장소 이름을 찾은 뒤
+origin  https://github.com/soojk129/test.git (fetch)
+origin  https://github.com/soojk129/test.git (push)
+
+    git push --set-upstream origin main
+
+$ git push origin main   혹은 $ git push --set-upstream origin main
+->해주면 완성
+
+
+
